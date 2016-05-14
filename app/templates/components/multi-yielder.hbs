@@ -1,0 +1,17 @@
+<h2>Multi Yielder</h2>
+
+<div>
+  <button onclick={{perform waitAFewSeconds}}>
+    Wait a few seconds
+  </button>
+
+  <button onclick={{perform waitForPromise}}>
+    Wait for successful promise
+  </button>
+
+  <button onclick={{perform waitForFailingPromise}}>
+    Wait for failing promise
+  </button>
+</div>
+
+<p>{{status}}</p>
