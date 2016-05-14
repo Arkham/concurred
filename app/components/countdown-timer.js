@@ -1,27 +1,28 @@
 import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
 
+const { computed, get, set } = Ember;
+
 export default Ember.Component.extend({
   duration: null,
   current: null,
 
-  startCountdownTask: task(function* (duration) {
-    this.set('current', duration);
+  decoratedCurrent: computed('current', function() {
+    let current = get(this, 'current');
 
-    while (this.get('current') > 0) {
+    if (current === 0) {
+      return 'Done!';
+    } else {
+      return current;
+    }
+  }),
+
+  startCountdown: task(function* (duration) {
+    set(this, 'current', duration);
+
+    while (get(this, 'current') > 0) {
       yield timeout(1000);
       this.decrementProperty('current');
     }
-
-    this.set('current', 'DONE!');
-    yield timeout(2000);
-    this.set('current', null);
-  }).restartable(),
-
-  actions: {
-    startCountdown() {
-      let duration = this.get('duration');
-      this.get('startCountdownTask').perform(duration);
-    }
-  }
+  }).restartable()
 });
