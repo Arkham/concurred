@@ -11,7 +11,7 @@ g:hover {
 }
 </style>
 
-<svg style="width: 100%; padding: 5px;" >
+<svg style="width: 100%; height: 120px; padding: 5px;" >
 {{#each trackers as |tracker|}}
   <g height="20px">
     {{#with (pick-from colors tracker.id) as |color|}}
@@ -44,7 +44,6 @@ g:hover {
 {{/each}}
 
 {{#with (scale timeElapsed lowerLimit upperLimit) as |x|}}
-  <line x1="{{x}}%" y1="0" x2="{{x}}%" y2="100" stroke="black" />
+  <line x1="{{x}}%" y1="0" x2="{{x}}%" y2="120" stroke="black" />
 {{/with}}
-
 </svg>
