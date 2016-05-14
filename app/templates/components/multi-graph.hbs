@@ -1,3 +1,16 @@
 <h2>Multi Graph</h2>
 
-{{concurrency-graph task=normalTask}}
+<select onchange={{action 'setConcurrencyType' value="target.value"}}>
+  <option selected disabled>Concurrency type</option>
+  {{#each concurrencyTypes as |type|}}
+    <option value={{type}} selected={{eq type concurrencyType}}>{{capitalize type}}</option>
+  {{/each}}
+</select>
+
+{{#if (and concurrencyType (not-eq concurrencyType 'normal'))}}
+  {{input value=maxConcurrency placeholder="Max concurrency" key-up=(action "setDynamicConcurrency")}}
+{{/if}}
+
+{{#if concurrencyType}}
+  {{concurrency-graph label="Start Dynamic Task" task=dynamicConcurrencyTask}}
+{{/if}}

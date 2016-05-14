@@ -1,4 +1,4 @@
-<button {{action 'startTask'}}>task.perform()</button>
+<button {{action 'startTask'}}>{{label}}</button>
 <button {{action 'restart'}}>Clear Timeline</button>
 {{#if task.isRunning}}
   <button {{action 'cancelAll' target=task}}>Cancel All</button>

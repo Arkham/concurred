@@ -27,7 +27,7 @@ export default Ember.Component.extend({
     });
 
     try {
-      let resolvedValue = yield promise;
+      yield promise;
     } catch(e) {
       set(this, 'status', `The value of the error is ${e}`);
     }
