@@ -1,0 +1,26 @@
+@import "./normalize";
+@import "./skeleton";
+
+body {
+  padding: 40px 0;
+}
+
+header .tagline {
+  font-size: 50%;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.widget {
+  margin-top: 2rem;
+}
+
+button:hover {
+  background: #f6fbfc;
+}
+
+button:active {
+  background: #eef7fa;
+}
