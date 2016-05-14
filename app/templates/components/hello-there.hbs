@@ -1,4 +1,11 @@
 <h2>Hello There</h2>
-<button onClick={{perform greet}}>I'll greet you, in a sec.</button>
-<button onClick={{perform greetDebounced}}>I'll greet you, but only once.</button>
-<button onClick={{perform greetDrop}}>I'll greet you, don't stress me.</button>
+
+<div>
+  <button onClick={{perform greet}}>I'll greet you, in a sec.</button>
+  <button onClick={{perform greetDebounced}}>I'll greet you, when you stop clicking.</button>
+</div>
+
+<div>
+  <button onClick={{perform greetEnqueued}}>I'll be greeting you, keep clicking.</button>
+  <button onClick={{perform greetDrop}}>I'm greeting you, don't stress me.</button>
+</div>
