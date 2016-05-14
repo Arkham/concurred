@@ -1,0 +1,14 @@
+<h2>Task Killer</h2>
+
+<button {{action 'performTask'}}>Perform Task</button>
+{{#if count}}
+  <button {{action 'cancelAll'}}>Cancel All</button>
+{{/if}}
+
+{{#if mostRecentTask.isRunning}}
+  <button {{action 'cancelMostRecent'}}>Cancel Most Recent</button>
+{{/if}}
+
+{{#if count}}
+  <p>Count: {{count}}</p>
+{{/if}}
