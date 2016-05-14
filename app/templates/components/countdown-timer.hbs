@@ -1,0 +1,8 @@
+<h2>Countdown Timer</h2>
+
+<form {{action "startCountdown" on="submit"}}>
+  {{input type="number" placeholder="Seconds to go" value=duration}}
+  <button type="submit">Go</button>
+</form>
+
+{{current}}
