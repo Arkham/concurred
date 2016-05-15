@@ -1,0 +1,16 @@
+<h2>Task Tracker</h2>
+
+<button onclick={{perform myTask false}}>
+  Run to completion
+</button>
+
+<button onclick={{perform myTask true}}>
+  Throw an error
+</button>
+
+<ul>
+  <li>Task State: {{myTask.state}}</li>
+  <li>Completions: {{completionsCount}}</li>
+  <li>Error: {{errorsCount}}</li>
+  <li>Finally block runs: {{totalCount}}</li>
+</ul>
