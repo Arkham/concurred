@@ -1,0 +1,17 @@
+<h2>Task Family</h2>
+
+<button onclick={{perform parentTask}}>
+  {{#if parentTask.isRunning}}
+    Restart parent task
+  {{else}}
+    Perform parent task
+  {{/if}}
+</button>
+
+<pre>Status: {{status}}</pre>
+
+<ul>
+  <li>Parent Task: {{parentTask.state}}</li>
+  <li>Child Task: {{childTask.state}}</li>
+  <li>Granchild Task: {{granchildTask.state}}</li>
+</ul>
