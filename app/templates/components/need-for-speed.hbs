@@ -1,0 +1,15 @@
+<h2>Need for speed</h2>
+
+{{#press-and-hold-button
+  press=(perform incrementBy -1)
+  release=(cancel-all incrementBy)}}
+  Decrease (keep pressed)
+{{/press-and-hold-button}}
+
+{{#press-and-hold-button
+  press=(perform incrementBy 1)
+  release=(cancel-all incrementBy)}}
+  Increase (keep pressed)
+{{/press-and-hold-button}}
+
+<p>Number: {{number}}</p>

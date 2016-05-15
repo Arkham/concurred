@@ -1,0 +1,14 @@
+<h2>The Meaning of Life</h2>
+
+<button onclick={{perform askTheQuestion}}>
+  {{#if askTheQuestion.isIdle}}
+    Ask The Question
+  {{else}}
+    Thinking...
+    {{fa-icon "spinner" spin=true}}
+  {{/if}}
+</button>
+
+{{#if askTheQuestion.lastSuccessful.value}}
+  <p>The answer is {{askTheQuestion.lastSuccessful.value}}.</p>
+{{/if}}

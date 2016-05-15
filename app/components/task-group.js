@@ -3,7 +3,7 @@ import { task, taskGroup, timeout } from 'ember-concurrency';
 
 const TASK_FN = function* () {
   yield timeout(2000);
-}
+};
 
 const { computed, get } = Ember;
 
