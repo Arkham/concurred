@@ -1,8 +1,6 @@
 import Ember from 'ember';
 import { task, timeout } from 'ember-concurrency';
 
-const { get, set } = Ember;
-
 export default Ember.Component.extend({
   number: 0,
 

@@ -6,7 +6,7 @@ let sendPress = function() {
 
 let sendRelease = function() {
   this.sendAction('release');
-}
+};
 
 export default Ember.Component.extend({
   tagName: 'button',
