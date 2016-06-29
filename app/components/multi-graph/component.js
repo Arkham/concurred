@@ -13,7 +13,7 @@ function * SHARED_TASK_FN(tracker) {
 }
 
 export default Ember.Component.extend({
-  concurrencyTypes: ['normal', 'restartable', 'enqueue', 'drop'],
+  concurrencyTypes: ['normal', 'restartable', 'enqueue', 'drop', 'keepLatest'],
 
   maxConcurrency: null,
   concurrencyType: null,
@@ -41,6 +41,9 @@ export default Ember.Component.extend({
             break;
           case 'drop':
             newTask.maxConcurrency(maxConcurrency).drop();
+            break;
+          case 'keepLatest':
+            newTask.keepLatest();
             break;
         }
 
